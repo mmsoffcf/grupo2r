@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grupo 2R</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b0f1a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ===== ANIMACIONES BASE ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    .delay-1 { animation-delay: .2s; }
+    .delay-2 { animation-delay: .4s; }
+    .delay-3 { animation-delay: .6s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      opacity: .9;
+      transition: opacity .3s ease;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    /* HERO */
+    header {
+      min-height: 100vh;
+      background-image: url("assets/fondo_grupo2r.jpg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    header > div {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    header h1 {
+      font-size: 4.5rem;
+      letter-spacing: 6px;
+    }
+
+    header p {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      opacity: .9;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 120px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .split img {
+      width: 100%;
+      border-radius: 22px;
+      transition: transform .6s ease;
+    }
+
+    .split img:hover {
+      transform: scale(1.03);
+    }
+
+    section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+    }
+
+    section h3 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #dc2626;
+    }
+
+    section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      opacity: .9;
+      margin-bottom: 15px;
+    }
+
+    /* VALORES - LIDER */
+    .valores-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    .valores-list li {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 8px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .valores-list li::before {
+      content: "►";
+      position: absolute;
+      left: 0;
+      color: #dc2626;
+      font-size: 0.9rem;
+    }
+
+    .valores-list strong {
+      color: #dc2626;
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+    }
+
+    .lider-highlight {
+      display: inline-block;
+      background: linear-gradient(135deg, #dc2626, #7f1d1d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      margin-left: 10px;
+    }
+
+    /* HUB */
+    .hub {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .hub a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .hub-card {
+      background: #fff;
+      color: #111;
+      border-radius: 22px;
+      padding: 60px 40px;
+      text-align: center;
+      transition: transform .35s ease, box-shadow .35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hub-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0,0,0,.4);
+    }
+
+    .hub-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hub-card span {
+      font-size: .95rem;
+      letter-spacing: 2px;
+      opacity: .7;
+    }
+
+    .prime::before,
+    .rubio::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 6px;
+      width: 100%;
+    }
+
+    .prime::before {
+      background: linear-gradient(to right,#2563eb,#1e40af);
+    }
+
+    .rubio::before {
+      background: linear-gradient(to right,#dc2626,#7f1d1d);
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg,#000,#1a1a1a);
+      text-align: center;
+      padding: 140px 30px;
+    }
+
+    .cta h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #dc2626;
+      color: #fff;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(220, 38, 38, 0.5);
+      background: #b91c1c;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: .9rem;
+      opacity: .7;
+    }
+
+    @media(max-width:900px){
+      header h1 { font-size: 3rem; }
+      .split { grid-template-columns: 1fr; }
+      .hub { grid-template-columns: 1fr; }
+      section h2 { font-size: 2.2rem; }
+      section h3 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="fade-up">
+  <div class="logo">GRUPO 2R</div>
+  <div>
+    <a href="#quienes-somos">¿Quiénes somos?</a>
+    <a href="#divisiones">Divisiones</a>
+    <a href="rubio.html">Proyectos Rubio</a>
+  </div>
+</nav>
+
+<header>
+  <div class="fade-up delay-1">
+    <h1>GRUPO 2R</h1>
+    <p>Soluciones visuales, publicidad y proyectos que construyen marcas.</p>
+  </div>
+</header>
+
+<section id="quienes-somos">
+  <div class="split">
+    <img class="fade-up"
+      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1170&auto=format&fit=crop">
+    <div class="fade-up delay-1">
+      <h2>¿Quiénes somos?</h2>
+      <p>
+        Fundada en 1995, somos una compañía dedicada al mantenimiento de edificios, pintura y rotulación. 
+        Desde su inicio brindando calidad, excelente servicio, soluciones, comprometidos con la satisfacción 
+        de nuestros socios comerciales y en constante innovación.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="split">
+    <div class="fade-up">
+      <h3>Misión</h3>
+      <p>
+        Satisfacer a nuestros clientes mediante atención, calidad y servicio. Brindando soluciones al sector 
+        industrial, comercial y residencial, siendo la mejor opción en la Comarca Lagunera.
+      </p>
+    </div>
+    <img class="fade-up delay-1"
+      src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1074&auto=format&fit=crop">
+  </div>
+</section>
+
+<section>
+  <div class="split">
+    <img class="fade-up"
+      src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1170&auto=format&fit=crop">
+    <div class="fade-up delay-1">
+      <h3>Visión</h3>
+      <p>
+        Atender toda la zona norte del país, alcanzando la satisfacción total de nuestros clientes, generando 
+        y desarrollando a socios y colaboradores.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="split">
+    <div class="fade-up">
+      <h3>Valores <span class="lider-highlight">L·I·D·E·R</span></h3>
+      <ul class="valores-list">
+        <li><strong>L</strong>ealtad</li>
+        <li><strong>I</strong>ntegridad</li>
+        <li><strong>D</strong>isciplina</li>
+        <li><strong>E</strong>xcelencia</li>
+        <li><strong>R</strong>esponsabilidad</li>
+      </ul>
+    </div>
+    <img class="fade-up delay-1"
+      src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1102&auto=format&fit=crop">
+  </div>
+</section>
+
+<section>
+  <div class="split">
+    <img class="fade-up"
+      src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1171&auto=format&fit=crop">
+    <div class="fade-up delay-1">
+      <h3>Objetivos</h3>
+      <p>
+        Que nuestros clientes nos reconozcan como una empresa sólida, confiable y honesta siempre a la vanguardia 
+        y de excelente servicio. Crear fuentes de empleo y fomentar en nuestros colaboradores, proveedores y clientes 
+        valores éticos que los impulsen hacia un desarrollo personal y calidad de vida.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="split">
+    <div class="fade-up">
+      <h2>Impulsamos marcas</h2>
+      <p>
+        Creamos, producimos y ejecutamos soluciones visuales que conectan con las personas.
+        Desde publicidad estratégica hasta proyectos físicos que transforman espacios y generan impacto.
+      </p>
+    </div>
+    <img class="fade-up delay-1"
+      src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1106&auto=format&fit=crop">
+  </div>
+</section>
+
+<section id="divisiones">
+  <h2 class="fade-up" style="text-align:center;">Nuestras Divisiones</h2>
+
+  <div class="hub">
+    <div class="hub-card prime fade-up">
+      <h3>División Prime</h3>
+      <span>Publicidad Digital</span>
+    </div>
+
+    <a href="rubio.html">
+      <div class="hub-card rubio fade-up delay-1">
+        <h3>División Proyectos Rubio</h3>
+        <span>Pintura y Rotulación</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="cta fade-up">
+  <h2>Hagamos visible tu proyecto</h2>
+  <p>Publicidad, imagen y ejecución profesional</p>
+  <a href="rubio.html" class="btn">Conocer servicios</a>
+</section>
+
+<footer class="fade-up">
+  Grupo 2R © 2026<br>
+  Tu nueva forma de anunciarte
+</footer>
+
+</body>
+</html>
