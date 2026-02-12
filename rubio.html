@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Proyectos Rubio: Especialistas en pintura profesional, rotulación y acabados de alta calidad en la Comarca Lagunera.">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <title>Proyectos Rubio - Pintura y Rotulación Profesional | Grupo 2R</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: auto;
+    }
+
+    .logo-text {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    header {
+      min-height: 100vh;
+      background-image: url("assets/rubio1.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    header > div {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-logo {
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .brand-font {
+      font-size: 3.5rem;
+      letter-spacing: 4px;
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      margin: 25px 0;
+      font-size: 1.3rem;
+    }
+
+    .btn {
+      background: #dc2626;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #b91c1c;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+    }
+
+    section {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #dc2626;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .split img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .split img:hover {
+      transform: scale(1.03);
+    }
+
+    .split h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #dc2626;
+    }
+
+    .split p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #dc2626, #7f1d1d);
+      color: #fff;
+      text-align: center;
+      padding: 120px 30px;
+    }
+
+    .cta h2 {
+      color: #fff;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: .9rem;
+    }
+
+    @media(max-width:900px){
+      .brand-font { font-size: 2.5rem; }
+      .header-logo { max-width: 200px; }
+      .split { 
+        grid-template-columns: 1fr; 
+        gap: 40px;
+      }
+      nav { padding: 15px 20px; }
+      .logo-img { height: 40px; }
+      .logo-text { font-size: 1rem; }
+      
+      /* Forzar orden: texto arriba, imagen abajo */
+      .split > div:first-child {
+        order: 1;
+      }
+      .split > img {
+        order: 2;
+      }
+      .split > div:last-child {
+        order: 1;
+      }
+      
+      section {
+        padding: 60px 20px;
+      }
+
+      .cta h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav role="navigation" aria-label="Navegación principal">
+  <div class="logo-container">
+    <img src="assets/Logo_RubioProyectos_B.png" alt="Proyectos Rubio Logo" class="logo-img">
+    <span class="logo-text"> </span>
+  </div>
+  <div>
+    <a href="index.html">Inicio</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<header>
+  <div data-aos="fade-up">
+    <img src="assets/Logo_RubioProyectos_B.png" alt="Proyectos Rubio" class="header-logo">
+
+    <p>Pintura y rotulación profesional que transforma espacios</p>
+    <a href="https://wa.me/528714081313" class="btn" rel="noopener noreferrer" target="_blank" aria-label="Contactar por WhatsApp">Cotiza por WhatsApp</a>
+  </div>
+</header>
+
+<section id="galeria">
+  <h2 data-aos="fade-up" style="text-align: center; margin-bottom: 60px;">Nuestros Proyectos</h2>
+
+  <!-- Proyecto 1 -->
+  <div class="split">
+    <div data-aos="fade-right">
+      <h3>Proyectos Industriales</h3>
+      <p>Especialistas en pintura industrial y rotulación de gran formato para naves, bodegas y espacios comerciales. Trabajamos con materiales de alta durabilidad que resisten las condiciones más exigentes.</p>
+    </div>
+    <img src="assets/rubio2.jpg" alt="Proyecto industrial Rubio" data-aos="fade-left" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200'">
+  </div>
+
+  <!-- Proyecto 2 -->
+  <div class="split">
+    <img src="assets/rubio3.jpg" alt="Rotulación profesional" data-aos="fade-right" onerror="this.src='https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1200'">
+    <div data-aos="fade-left">
+      <h3>Rotulación de Alta Calidad</h3>
+      <p>Creamos identidad visual para tu negocio con rotulación profesional, letras corpóreas y señalética que destaca tu marca en el mercado.</p>
+    </div>
+  </div>
+
+  <!-- Proyecto 3 -->
+  <div class="split">
+    <div data-aos="fade-right">
+      <h3>Acabados Arquitectónicos</h3>
+      <p>Transformamos espacios con acabados de pintura arquitectónica que combinan estética y funcionalidad. Atención al detalle en cada proyecto.</p>
+    </div>
+    <img src="assets/rubio4.jpeg" alt="Acabados arquitectónicos" data-aos="fade-left" onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200'">
+  </div>
+
+  <!-- Proyecto 4 -->
+  <div class="split">
+    <img src="assets/rubio5.jpg" alt="Pintura comercial" data-aos="fade-right" onerror="this.src='https://images.unsplash.com/photo-1572981779307-38b8cabb2407?q=80&w=1200'">
+    <div data-aos="fade-left">
+      <h3>Espacios Comerciales</h3>
+      <p>Renovamos locales comerciales, oficinas y espacios corporativos con pintura de alta calidad y acabados profesionales que impresionan.</p>
+    </div>
+  </div>
+
+  <!-- Proyecto 5 -->
+  <div class="split">
+    <div data-aos="fade-right">
+      <h3>Señalización Vial</h3>
+      <p>Especialistas en señalización vial, demarcación de estacionamientos y pintado de vialidades con materiales certificados y larga duración.</p>
+    </div>
+    <img src="assets/rubio6.jpeg" alt="Señalización vial" data-aos="fade-left" onerror="this.src='https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=1200'">
+  </div>
+
+  <!-- Proyecto 6 -->
+  <div class="split">
+    <img src="assets/rubio7.jpeg" alt="Impermeabilización" data-aos="fade-right" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200'">
+    <div data-aos="fade-left">
+      <h3>Impermeabilización</h3>
+      <p>Protegemos tus espacios con sistemas de impermeabilización profesional. Soluciones duraderas contra filtraciones y humedad.</p>
+    </div>
+  </div>
+
+  <!-- Proyecto 7 -->
+  <div class="split">
+    <div data-aos="fade-right">
+      <h3>Mantenimiento Industrial</h3>
+      <p>Servicio integral de mantenimiento preventivo y correctivo para instalaciones industriales. Garantizamos la durabilidad de tus activos.</p>
+    </div>
+    <img src="assets/rubio8.jpeg" alt="Mantenimiento industrial" data-aos="fade-left" onerror="this.src='https://images.unsplash.com/photo-1581093458791-9f3c3250a8e0?q=80&w=1200'">
+  </div>
+
+  <!-- Proyecto 8 -->
+  <div class="split">
+    <img src="assets/rubio9.jpg" alt="Fachadas comerciales" data-aos="fade-right" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200'">
+    <div data-aos="fade-left">
+      <h3>Fachadas Comerciales</h3>
+      <p>Renovación completa de fachadas comerciales que atraen clientes y renuevan la imagen de tu negocio.</p>
+    </div>
+  </div>
+
+  <!-- Proyecto 9 -->
+  <div class="split">
+    <div data-aos="fade-right">
+      <h3>Pintura Residencial</h3>
+      <p>Transformamos hogares con pintura de alta calidad, asesoría en color y acabados que reflejan tu estilo personal.</p>
+    </div>
+    <img src="assets/rubio10.jpg" alt="Pintura residencial" data-aos="fade-left" onerror="this.src='https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200'">
+  </div>
+
+  <!-- Proyecto 10 -->
+  <div class="split">
+    <img src="assets/rubio11.jpg" alt="Estructuras metálicas" data-aos="fade-right" onerror="this.src='https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=1200'">
+    <div data-aos="fade-left">
+      <h3>Estructuras Metálicas</h3>
+      <p>Pintura anticorrosiva y protección de estructuras metálicas con sistemas especializados de larga duración.</p>
+    </div>
+  </div>
+
+  <!-- Proyecto 11 -->
+  <div class="split">
+    <div data-aos="fade-right">
+      <h3>Pisos Industriales</h3>
+      <p>Aplicación de recubrimientos epóxicos y poliuretano para pisos industriales. Resistentes al tráfico pesado y productos químicos.</p>
+    </div>
+    <img src="assets/rubio12.jpeg" alt="Pisos industriales" data-aos="fade-left" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200'">
+  </div>
+
+  <!-- Proyecto 12 -->
+  <div class="split">
+    <img src="assets/rubio13.jpg" alt="Proyectos especiales" data-aos="fade-right" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200'">
+    <div data-aos="fade-left">
+      <h3>Proyectos Especiales</h3>
+      <p>Desarrollamos proyectos personalizados adaptados a las necesidades específicas de cada cliente.</p>
+    </div>
+  </div>
+
+  <!-- Proyecto 13 -->
+  <div class="split">
+    <div data-aos="fade-right">
+      <h3>Trabajos en Altura</h3>
+      <p>Contamos con equipo especializado y personal certificado para trabajos en altura con los más altos estándares de seguridad.</p>
+    </div>
+    <img src="assets/rubio14.jpg" alt="Trabajos en altura" data-aos="fade-left" onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200'">
+  </div>
+
+  <!-- Proyecto 14 -->
+  <div class="split">
+    <img src="assets/rubio15.jpg" alt="Acabados de lujo" data-aos="fade-right" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200'">
+    <div data-aos="fade-left">
+      <h3>Acabados Premium</h3>
+      <p>Técnicas especializadas y productos de alta gama para acabados premium que superan expectativas.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="cta" id="contacto">
+  <h2 data-aos="fade-up">Transforma tu espacio</h2>
+  <p data-aos="fade-up">Llámanos o escríbenos para una cotización sin compromiso</p>
+  <a href="tel:8714081313" class="btn" data-aos="zoom-in" aria-label="Llamar al 871-408-1313">871-408-1313</a>
+</section>
+
+<footer>
+  <p>Proyectos Rubio © 2026</p>
+  <p>Parte de Grupo 2R - Calidad y profesionalismo garantizado</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({ once:true, duration:1200, easing:'ease-out-cubic' });
+</script>
+
+</body>
+</html>
